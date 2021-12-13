@@ -14,3 +14,10 @@ def print_only_odd_numbers(list_of_numbers):
 numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 print_only_odd_numbers(numbers)
 
+def return_even_number(lisr_o_n)
+    lista = []
+    for nr in lisr_o_n
+        if nr % 2 == 0:
+            lista.append(nr)
+    return lista
+
