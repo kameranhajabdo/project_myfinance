@@ -20,8 +20,29 @@ print(biggest_number)
 #ex3
 dict1 = {"a": 1, "b": 3, "c": 6, "d": 10, "e": 90, "f": 15}
 
-def removes_odd_number(dict1):
-    for x in dict1:
-        if x%2!=0:
-            dict1.remove(x)
-print(removes_odd_number(dict1))
+#ex4
+
+tuple1 = ("a", "b", "c", "d")
+tuple2 = (1, 2, 3, 4)
+
+dict = {}
+for key, value in enumerate(tuple1):
+    dict[value] = tuple2[key]
+print(dict)
+
+
+#ex5
+
+def sum_of_value(dict11):
+    l = []
+    for x in dict11:
+        l.append(dict11[x])
+    final = sum(l)
+
+    return final
+
+
+dict1 = {"a": 1, "b": 3, "c": 6, "d": 10, "e": 90, "f": 15}
+print(sum_of_value(dict1))
+
+
