@@ -20,6 +20,13 @@ print(biggest_number)
 #ex3
 dict1 = {"a": 1, "b": 3, "c": 6, "d": 10, "e": 90, "f": 15}
 
+for key, value in dict1.items():
+    if value % 2 != 0:
+        del dict1[key]
+        break
+
+print(dict1)
+
 #ex4
 
 tuple1 = ("a", "b", "c", "d")
@@ -44,5 +51,12 @@ def sum_of_value(dict11):
 
 dict1 = {"a": 1, "b": 3, "c": 6, "d": 10, "e": 90, "f": 15}
 print(sum_of_value(dict1))
+
+
+#ex6
+dict1 = {"a": 1, "b": 3, "c": 6, "d": 10, "e": 90, "f": 15}
+
+for item in (dict1.keys()):
+    print (item)
 
 
