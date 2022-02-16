@@ -1,0 +1,38 @@
+[
+{
+"ticker": "sing",
+"company": "ng",
+"amount": 0,
+"field": "sg"
+},
+{
+"ticker": "PFE",
+"company": "Pfizer Inc.",
+"amount": 0,
+"field": "Healthcare"
+},
+{
+"ticker": "TSLA",
+"company": "Tesla, Inc.",
+"amount": 0,
+"field": "Consumer Cyclical"
+},
+{
+"ticker": "AAPL",
+"company": "Apple Inc.",
+"amount": 0,
+"field": "Technology"
+},
+{
+"ticker": "PATH",
+"company": "UiPath Inc.",
+"amount": 0,
+"field": "Technology"
+},
+{
+"ticker": "MSFT",
+"company": "Microsoft Corporation",
+"amount": 0,
+"field": "Technology"
+}
+]
