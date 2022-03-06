@@ -1,8 +1,8 @@
 {
   "number_of_items_per_page": 3,
   "database": {
-    "type": "file",
-    "path": "database/database.txt"
+    "type": "sql",
+    "path": "database/stocks"
 
 
 
