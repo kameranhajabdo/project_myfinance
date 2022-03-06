@@ -9,3 +9,9 @@ class StockModel(BaseModel):
       class Config:
             orm_mode = True
 
+class StockExtendedModel(StockModel):
+      long_summary: str = Field(description="The business summary of the company")
+      exchange: str = Field(description="the name of the exchange")
+      country: str = Field()
+      number_of_employees: str = Field()
+
