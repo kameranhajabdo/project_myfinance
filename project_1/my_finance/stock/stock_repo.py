@@ -21,10 +21,10 @@ class StockRepository:
             "country": new_stock.country,
             "numberOfEmployees": new_stock.number_of_employees,
         }
-
         self.persistance.add(stock_info)
 
     def get_all(self) -> list[Stock]:
+        print([s.price for s in self.stocks.values()])
         return list(self.stocks.values())
 
     # if we do not have the stock, we can raise an error or return None

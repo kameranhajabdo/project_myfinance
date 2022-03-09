@@ -1,4 +1,5 @@
 import json
+
 from stock.persistance_interface import StockPersistanceInterface
 
 
@@ -16,18 +17,15 @@ class StockFilePersistance(StockPersistanceInterface):
     def add(self, stock_info: dict):
         items = self.get_all()
         items.append(stock_info)
-        list_json = json.dumps(items, indent=2)
-        self.__save(list_json)
+        self.__save(items)
 
-    def __save(self, list_json):
+    def __save(self, items: list[dict]):
+        list_json = json.dumps(items, indent=2)
         file = open(self.path, "w")
         file.write(list_json)
         file.close()
 
     def remove(self, stock_id: str):
         items = self.get_all()
-        items = [i for i in items if i ["ticker"] != stock_id]
-        list_json = json.dumps(items, indent=2)
-        self.__save(list_json)
-
-
+        items = [i for i in items if i["ticker"] != stock_id]
+        self.__save(items)
