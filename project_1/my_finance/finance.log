@@ -1,0 +1,106 @@
+INFO:root:Starting the finance app ...
+INFO:uvicorn.error:Started server process [364]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:uvicorn.error:Application startup complete.
+INFO:root:Starting the finance app ...
+INFO:uvicorn.error:Started server process [12376]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:root:Loading stocks from database ...
+INFO:root:Successfully loaded stocks from database.
+INFO:uvicorn.error:Application startup complete.
+INFO:root:Starting the finance app ...
+INFO:uvicorn.error:Started server process [6244]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:root:Loading stocks from database ...
+INFO:root:Successfully loaded stocks from database.
+INFO:uvicorn.error:Application startup complete.
+INFO:root:Starting the finance app ...
+INFO:uvicorn.error:Started server process [3120]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:root:Loading stocks from database ...
+INFO:root:Successfully loaded stocks from database.
+INFO:uvicorn.error:Application startup complete.
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "c:\users\emty\pycharmprojects\python-course2\project_1\venv\lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 364, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "c:\users\emty\pycharmprojects\python-course2\project_1\venv\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "c:\users\emty\pycharmprojects\python-course2\project_1\venv\lib\site-packages\fastapi\applications.py", line 212, in __call__
+    await super().__call__(scope, receive, send)
+  File "c:\users\emty\pycharmprojects\python-course2\project_1\venv\lib\site-packages\starlette\applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "c:\users\emty\pycharmprojects\python-course2\project_1\venv\lib\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc
+  File "c:\users\emty\pycharmprojects\python-course2\project_1\venv\lib\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "c:\users\emty\pycharmprojects\python-course2\project_1\venv\lib\site-packages\starlette\exceptions.py", line 82, in __call__
+    raise exc
+  File "c:\users\emty\pycharmprojects\python-course2\project_1\venv\lib\site-packages\starlette\exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "c:\users\emty\pycharmprojects\python-course2\project_1\venv\lib\site-packages\starlette\routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "c:\users\emty\pycharmprojects\python-course2\project_1\venv\lib\site-packages\starlette\routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "c:\users\emty\pycharmprojects\python-course2\project_1\venv\lib\site-packages\starlette\routing.py", line 61, in app
+    response = await func(request)
+  File "c:\users\emty\pycharmprojects\python-course2\project_1\venv\lib\site-packages\fastapi\routing.py", line 234, in app
+    response_data = await serialize_response(
+  File "c:\users\emty\pycharmprojects\python-course2\project_1\venv\lib\site-packages\fastapi\routing.py", line 137, in serialize_response
+    raise ValidationError(errors, field.type_)
+pydantic.error_wrappers.ValidationError: 3 validation errors for StockModel
+response -> 0 -> ticker
+  none is not an allowed value (type=type_error.none.not_allowed)
+response -> 0 -> company
+  none is not an allowed value (type=type_error.none.not_allowed)
+response -> 0 -> field
+  none is not an allowed value (type=type_error.none.not_allowed)
+INFO:root:Starting the finance app ...
+INFO:uvicorn.error:Started server process [6004]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:root:Loading stocks from database ...
+INFO:root:Successfully loaded stocks from database.
+INFO:uvicorn.error:Application startup complete.
+INFO:root:Starting the finance app ...
+INFO:uvicorn.error:Started server process [10184]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:root:Loading stocks from database ...
+INFO:root:Successfully loaded stocks from database.
+INFO:uvicorn.error:Application startup complete.
+INFO:root:Updating prices ...
+INFO:root:Updating prices ...
+INFO:root:Updating prices ...
+INFO:root:Updating prices ...
+INFO:root:Updating prices ...
+INFO:root:Updating prices ...
+INFO:root:Updating prices ...
+INFO:root:Updating prices ...
+INFO:root:Updating prices ...
+INFO:root:Starting the finance app ...
+INFO:uvicorn.error:Started server process [3504]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:root:Loading stocks from database ...
+ERROR:uvicorn.error:Traceback (most recent call last):
+  File "c:\users\emty\pycharmprojects\python-course2\project_1\venv\lib\site-packages\starlette\routing.py", line 621, in lifespan
+    async with self.lifespan_context(app):
+  File "c:\users\emty\pycharmprojects\python-course2\project_1\venv\lib\site-packages\starlette\routing.py", line 518, in __aenter__
+    await self._router.startup()
+  File "c:\users\emty\pycharmprojects\python-course2\project_1\venv\lib\site-packages\starlette\routing.py", line 600, in startup
+    handler()
+  File "C:\Users\Emty\PycharmProjects\python-course2\project_1\my_finance\.\index.py", line 53, in load_list_of_items
+    stock_repo.load()
+  File "C:\Users\Emty\PycharmProjects\python-course2\project_1\my_finance\.\stock\stock_repo.py", line 45, in load
+    items = StockRepository.persistance.get_all()
+  File "C:\Users\Emty\PycharmProjects\python-course2\project_1\my_finance\.\database\stock_sql_persistance.py", line 13, in get_all
+    stocks = self.__execute_command(command)
+  File "C:\Users\Emty\PycharmProjects\python-course2\project_1\my_finance\.\database\stock_sql_persistance.py", line 41, in __execute_command
+    cursor.execute(command)
+sqlite3.OperationalError: no such table: stocks
+
+ERROR:uvicorn.error:Application startup failed. Exiting.
+INFO:root:Starting the finance app ...
+INFO:uvicorn.error:Started server process [10564]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:root:Loading stocks from database ...
+INFO:root:Successfully loaded stocks from database.
+INFO:uvicorn.error:Application startup complete.
