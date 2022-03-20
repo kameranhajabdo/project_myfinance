@@ -6,13 +6,13 @@ file.close()
 import json
 stocks = json.loads(contents)
 
-print("STEP2: Adding longSummary & exchange info to current data ...")
+print("STEP2: Adding country & number of employees info to current data ...")
 import yfinance
 for s in stocks:  # stocks is a list of dicts
     print("Adding new data for this stock info ... ", s)
     yf_ticker = yfinance.Ticker(s["ticker"])
-    s["numberOFEmployees"] = yf_ticker.info["fullTimeEmployees"]
-    s["country"] = yf_ticker.info["country"]
+    s["numberOfEmployees"] = yf_ticker.info["fullTimeEmployees"]  # different line from
+    s["country"] = yf_ticker.info["country"]  # different line from
     print("Added new data, new stock info: ", s)
 
 print("STEP3: Save to file (or database)")

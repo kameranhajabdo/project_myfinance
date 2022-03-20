@@ -21,6 +21,7 @@ from database.stock_sql_persistance import StockSqlPersistance
 from exceptions import StockNotFound
 from api.stocks import stocks_router
 from api.health import health_router
+from api.diagrams import diagrams_router
 
 app = FastAPI(
     title="Name of our app",  # TODO for homework, name your application
@@ -30,6 +31,7 @@ app = FastAPI(
 )
 app.include_router(stocks_router)
 app.include_router(health_router)
+app.include_router(diagrams_router)
 
 conf = Configuration()
 if conf.get_db_type() == "file":
