@@ -1,5 +1,5 @@
-from stock.stock import Stock
-from exceptions import StockNotFound
+from my_finance.stock.stock import Stock
+from my_finance.exceptions import StockNotFound
 
 
 class StockRepository:
@@ -8,7 +8,6 @@ class StockRepository:
 
     @staticmethod
     def add(new_stock: Stock):
-        StockRepository.stocks[new_stock.ticker] = new_stock
         stock_info = {
             "ticker": new_stock.ticker,
             "company": new_stock.company,
@@ -20,6 +19,7 @@ class StockRepository:
             "numberOfEmployees": new_stock.number_of_employees,
         }
         StockRepository.persistance.add(stock_info)
+        StockRepository.stocks[new_stock.ticker] = new_stock
 
     @staticmethod
     def get_all() -> list[Stock]:

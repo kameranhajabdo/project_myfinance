@@ -1,5 +1,4 @@
 from fastapi import APIRouter
-
 from models import StockModel, StockExtendedModel
 from stock.stock_factory import StockFactory
 from stock.stock import Stock
