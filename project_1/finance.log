@@ -1,0 +1,116 @@
+INFO:root:Starting the finance app ...
+INFO:uvicorn.error:Started server process [13252]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:root:Loading stocks from database ...
+ERROR:uvicorn.error:Traceback (most recent call last):
+  File "c:\users\kameran\pycharmprojects\python-course2\project_1\venv\lib\site-packages\starlette\routing.py", line 621, in lifespan
+    async with self.lifespan_context(app):
+  File "c:\users\kameran\pycharmprojects\python-course2\project_1\venv\lib\site-packages\starlette\routing.py", line 518, in __aenter__
+    await self._router.startup()
+  File "c:\users\kameran\pycharmprojects\python-course2\project_1\venv\lib\site-packages\starlette\routing.py", line 600, in startup
+    handler()
+  File "C:\Users\kameran\PycharmProjects\python-course2\project_1\.\my_finance\index.py", line 55, in load_list_of_items
+    stock_repo.load()
+  File "C:\Users\kameran\PycharmProjects\python-course2\project_1\.\my_finance\stock\stock_repo.py", line 45, in load
+    items = StockRepository.persistance.get_all()
+  File "C:\Users\kameran\PycharmProjects\python-course2\project_1\.\my_finance\database\stock_sql_persistance.py", line 13, in get_all
+    stocks = self.__execute_command(command)
+  File "C:\Users\kameran\PycharmProjects\python-course2\project_1\.\my_finance\database\stock_sql_persistance.py", line 41, in __execute_command
+    cursor.execute(command)
+sqlite3.DatabaseError: file is not a database
+
+ERROR:uvicorn.error:Application startup failed. Exiting.
+INFO:root:Starting the finance app ...
+INFO:uvicorn.error:Started server process [9544]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:root:Loading stocks from database ...
+ERROR:uvicorn.error:Traceback (most recent call last):
+  File "c:\users\kameran\pycharmprojects\python-course2\project_1\venv\lib\site-packages\starlette\routing.py", line 621, in lifespan
+    async with self.lifespan_context(app):
+  File "c:\users\kameran\pycharmprojects\python-course2\project_1\venv\lib\site-packages\starlette\routing.py", line 518, in __aenter__
+    await self._router.startup()
+  File "c:\users\kameran\pycharmprojects\python-course2\project_1\venv\lib\site-packages\starlette\routing.py", line 600, in startup
+    handler()
+  File "C:\Users\kameran\PycharmProjects\python-course2\project_1\.\my_finance\index.py", line 55, in load_list_of_items
+    stock_repo.load()
+  File "C:\Users\kameran\PycharmProjects\python-course2\project_1\.\my_finance\stock\stock_repo.py", line 45, in load
+    items = StockRepository.persistance.get_all()
+  File "C:\Users\kameran\PycharmProjects\python-course2\project_1\.\my_finance\database\stock_sql_persistance.py", line 13, in get_all
+    stocks = self.__execute_command(command)
+  File "C:\Users\kameran\PycharmProjects\python-course2\project_1\.\my_finance\database\stock_sql_persistance.py", line 41, in __execute_command
+    cursor.execute(command)
+sqlite3.DatabaseError: file is not a database
+
+ERROR:uvicorn.error:Application startup failed. Exiting.
+INFO:root:Starting the finance app ...
+INFO:uvicorn.error:Started server process [11592]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:root:Loading stocks from database ...
+ERROR:uvicorn.error:Traceback (most recent call last):
+  File "c:\users\kameran\pycharmprojects\python-course2\project_1\venv\lib\site-packages\starlette\routing.py", line 621, in lifespan
+    async with self.lifespan_context(app):
+  File "c:\users\kameran\pycharmprojects\python-course2\project_1\venv\lib\site-packages\starlette\routing.py", line 518, in __aenter__
+    await self._router.startup()
+  File "c:\users\kameran\pycharmprojects\python-course2\project_1\venv\lib\site-packages\starlette\routing.py", line 600, in startup
+    handler()
+  File "C:\Users\kameran\PycharmProjects\python-course2\project_1\.\my_finance\index.py", line 55, in load_list_of_items
+    stock_repo.load()
+  File "C:\Users\kameran\PycharmProjects\python-course2\project_1\.\my_finance\stock\stock_repo.py", line 45, in load
+    items = StockRepository.persistance.get_all()
+  File "C:\Users\kameran\PycharmProjects\python-course2\project_1\.\my_finance\database\stock_sql_persistance.py", line 13, in get_all
+    stocks = self.__execute_command(command)
+AttributeError: 'StockSqlPersistance' object has no attribute '_StockSqlPersistance__execute_command'
+
+ERROR:uvicorn.error:Application startup failed. Exiting.
+INFO:root:Starting the finance app ...
+INFO:uvicorn.error:Started server process [9784]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:root:Loading stocks from database ...
+INFO:root:Successfully loaded stocks from database.
+INFO:uvicorn.error:Application startup complete.
+INFO:root:Starting the finance app ...
+INFO:uvicorn.error:Started server process [6088]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:root:Loading stocks from database ...
+INFO:root:Successfully loaded stocks from database.
+INFO:uvicorn.error:Application startup complete.
+INFO:root:Updating prices ...
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /quote/TSLA HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /quote/TSLA/holders HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /quote/TSLA/financials HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /quote/TSLA/analysis HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /quote/TSLA/key-statistics?p=TSLA HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /quote/PATH HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /quote/PATH/holders HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /quote/PATH/financials HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /quote/PATH/analysis HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /quote/PATH/key-statistics?p=PATH HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /quote/PFE HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /quote/PFE/holders HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /quote/PFE/financials HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /quote/PFE/analysis HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /quote/PFE/key-statistics?p=PFE HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /quote/MSFT HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): finance.yahoo.com:443
+INFO:root:Starting the finance app ...
+INFO:uvicorn.error:Started server process [3920]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:root:Loading stocks from database ...
+INFO:root:Successfully loaded stocks from database.
+INFO:uvicorn.error:Application startup complete.
