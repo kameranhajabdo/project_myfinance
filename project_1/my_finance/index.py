@@ -24,10 +24,10 @@ from my_finance.api.health import health_router
 from my_finance.api.diagrams import diagrams_router
 
 app = FastAPI(
-    title="Name of our app",  # TODO for homework, name your application
+    title="FINANCE_APP",
     # <major_version>.<minor_version>.<patch_version>
-    version="0.2.0",  # increase version after finishing homework
-    description="",  # TODO add a description
+    version="1.0.0",  # increase version after finishing homework
+    description="This is a finance application",
 )
 app.include_router(stocks_router)
 app.include_router(health_router)
@@ -75,4 +75,6 @@ def update_prices():
 
 @app.exception_handler(StockNotFound)
 def handle_stock_not_found(exception, request):
-    return JSONResponse(content="The stock you requested was not saved in our app!", status_code=404)
+    return JSONResponse(
+        content="The stock you requested was not saved in our app!", status_code=404
+    )
