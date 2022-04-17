@@ -1,5 +1,5 @@
 from my_finance.stock.stock import Stock
-from my_finance.exceptions import StockNotFound
+from my_finance.exceptions import StockNotFound, CannotAddStock
 
 
 class StockRepository:
@@ -18,7 +18,10 @@ class StockRepository:
             "country": new_stock.country,
             "numberOfEmployees": new_stock.number_of_employees,
         }
-        StockRepository.persistance.add(stock_info)
+        try:
+            StockRepository.persistance.add(stock_info)
+        except Exception as e:
+            raise CannotAddStock("Could not add stock. Reason: " + str(e))
         StockRepository.stocks[new_stock.ticker] = new_stock
 
     @staticmethod

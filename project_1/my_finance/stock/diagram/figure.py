@@ -3,8 +3,7 @@ from plotly import graph_objects
 from matplotlib import pyplot
 import random
 
-
-from models import DiagramModel
+from my_finance.models import DiagramModel
 
 
 def show_simple_diagram(ticker_id: str, info: str = "Close", interval: str = "3y"):
@@ -31,5 +30,4 @@ def __get_the_data_frame(interval, ticker_id):
     tsla = yfinance.Ticker(ticker_id)
     dataframe = tsla.history(interval)
     dataframe.reset_index()
-    return dataframe
-
+    return

@@ -1,8 +1,8 @@
 import yfinance
 
 # imports are done from the file which starts the app
-from models import StockModel
-from stock.stock import Stock
+from my_finance.models import StockModel
+from my_finance.stock.stock import Stock
 
 
 class StockFactory:
@@ -20,4 +20,4 @@ class StockFactory:
         new_stock = Stock(model.ticker, company, field, country, number_of_employees)
         new_stock.set_long_summary(long_summary)
         new_stock.set_exchange(exchange)
-        return new_stock
+        return

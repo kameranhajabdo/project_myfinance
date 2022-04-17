@@ -1,10 +1,7 @@
 {
   "number_of_items_per_page": 3,
   "database": {
-    "type": "sql",
-    "path": "database\\stocks"
-
-
-
+    "type": "file",
+    "path": "my_finance/database/database.txt"
   }
 }
