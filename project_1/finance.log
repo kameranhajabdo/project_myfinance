@@ -114,3 +114,9 @@ INFO:uvicorn.error:Waiting for application startup.
 INFO:root:Loading stocks from database ...
 INFO:root:Successfully loaded stocks from database.
 INFO:uvicorn.error:Application startup complete.
+INFO:root:Starting the finance app ...
+INFO:uvicorn.error:Started server process [12948]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:root:Loading stocks from database ...
+INFO:root:Successfully loaded stocks from database.
+INFO:uvicorn.error:Application startup complete.
