@@ -1,5 +1,7 @@
 import sqlite3
 
+from typing import List
+
 from my_finance.stock.persistance_interface import StockPersistanceInterface
 
 
@@ -7,7 +9,7 @@ class StockSqlPersistance(StockPersistanceInterface):
     def __init__(self, path: str):
         self.path = path
 
-    def get_all(self) -> list[dict]:
+    def get_all(self) -> List[dict]:
         command = "SELECT * FROM stocks;"
         print("Reading all the elements from stocks table ...")
         stocks = self.__execute_command(command)
@@ -42,4 +44,4 @@ class StockSqlPersistance(StockPersistanceInterface):
         info = cursor.fetchall()
         connection.commit()
         connection.close()
-        return info
+        return

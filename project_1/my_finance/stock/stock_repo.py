@@ -1,5 +1,6 @@
+from typing import List
 from my_finance.stock.stock import Stock
-from my_finance.exceptions import StockNotFound, CannotAddStock
+from my_finance.exceptions import StockNotFound, CannotAddStock, StockAlreadyAdded, CannotDelete
 
 
 class StockRepository:
@@ -8,6 +9,8 @@ class StockRepository:
 
     @staticmethod
     def add(new_stock: Stock):
+        if new_stock.ticker in StockRepository.stocks.keys():
+            raise StockAlreadyAdded
         stock_info = {
             "ticker": new_stock.ticker,
             "company": new_stock.company,
@@ -25,21 +28,21 @@ class StockRepository:
         StockRepository.stocks[new_stock.ticker] = new_stock
 
     @staticmethod
-    def get_all() -> list[Stock]:
+    def get_all() -> List[Stock]:
         print([s.price for s in StockRepository.stocks.values()])
         return list(StockRepository.stocks.values())
 
-    # if we do not have the stock, we can raise an error or return None
     @staticmethod
     def get_by_ticker(ticker: str) -> Stock:
         if ticker in StockRepository.stocks.keys():
             return StockRepository.stocks[ticker]
         else:
             raise StockNotFound()
-        # return StockFactory().make_extended_stock(ticker)
 
     @staticmethod
     def remove(stock_id: str):
+        if stock_id not in StockRepository.stocks.keys():
+            raise CannotDelete
         StockRepository.stocks.pop(stock_id)
         StockRepository.persistance.remove(stock_id)
 
@@ -48,14 +51,8 @@ class StockRepository:
         items = StockRepository.persistance.get_all()
         # items = list of dictionaries from the file
         for one_item in items:
-            new_stock = Stock(
-                one_item["ticker"],
-                one_item["company"],
-                one_item["field"],
-                one_item["country"],
-                one_item["numberOfEmployees"],
-                one_item["amount"],
-            )
+            new_stock = Stock(one_item["ticker"], one_item["company"], one_item["field"],
+                              one_item["country"], one_item["numberOfEmployees"], one_item["amount"])
             if "longSummary" in one_item and "exchange" in one_item:
                 new_stock.set_long_summary(one_item["longSummary"])
                 new_stock.set_exchange(one_item["exchange"])

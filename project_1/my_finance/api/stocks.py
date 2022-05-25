@@ -1,8 +1,8 @@
 from fastapi import APIRouter
+from typing import List
 
 from my_finance.models import StockModel, StockExtendedModel
 from my_finance.stock.stock_factory import StockFactory
-from my_finance.stock.stock import Stock
 from my_finance.stock.stock_repo import StockRepository
 
 stocks_router = APIRouter(prefix="/stocks")
@@ -16,7 +16,7 @@ def add_new_stock(stock_info: StockModel):
 
 
 # example if you want to do a tasks app return the list of tasks, and rename the url /items -> /tasks
-@stocks_router.get("", response_model=list[StockModel])
+@stocks_router.get("", response_model=List[StockModel])
 def get_stocks(field: str = None, min_employees: int = None, page: int = None, items_per_page: int = None):
     stocks = stocks_repo.get_all()
     if field:

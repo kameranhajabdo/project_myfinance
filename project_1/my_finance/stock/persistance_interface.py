@@ -1,8 +1,10 @@
 from abc import ABC, abstractmethod
+from typing import List
+
 
 class StockPersistanceInterface(ABC):
     @abstractmethod
-    def get_all(self) -> list[dict]:
+    def get_all(self) -> List[dict]:
         pass
 
     @abstractmethod
